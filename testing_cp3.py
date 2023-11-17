@@ -93,35 +93,27 @@ base_request = BaseRequest(BASE_URL_PETSTORE)
 
 #STORE
 #post
-pprint.pprint('******post****')
 data1 = {"id": "1"}
 store_order_id = base_request.post('store', "order", data1)
 store_order_info = base_request.get('store/order', store_order_id)
 pprint.pprint(store_order_info)
-pprint.pprint('**********/n/n')
 pass
 
 # get 1
-pprint.pprint('******get****')
 get_ferst_store = base_request.get('store/order', store_order_id)
 pprint.pprint(get_ferst_store)
-pprint.pprint('**********/n/n')
 pass
 
 # get 2
-pprint.pprint('******get****')
 get_second_store = base_request.get('store', "inventory")
 pprint.pprint(get_second_store)
-pprint.pprint('**********/n/n')
 pass
 
 #delete
-pprint.pprint('*****delete*****')
 delete_order_id = base_request.delete('store/order', store_order_id)
 pprint.pprint(delete_order_id)
 delete_order_message = base_request.get('store/order', delete_order_id, expected_error=True)
 pprint.pprint(delete_order_message)
-pprint.pprint('**********/n/n')
 pass
 
 
@@ -129,10 +121,8 @@ pass
 
 # USER
 # get
-pprint.pprint('*****get*****')
 user_info = base_request.get('user', 'login')
 pprint.pprint(user_info)
-pprint.pprint('**********/n/n')
 pass
 
 #post
@@ -149,35 +139,16 @@ data = {
   }
 user_id = base_request.post('user', '', data)
 pprint.pprint(user_id)
-pprint.pprint('**********/n/n')
 pass
 
 # put
-pprint.pprint('******put****')
 data["phone"] = "85615478961"
 user_put = base_request.put('user', data["username"], data)
 pprint.pprint(user_put)
-pprint.pprint('**********/n/n')
 pass
 
 
 # delete
-pprint.pprint('*****delete*****')
 delete_user = base_request.delete('user', data["username"])
 pprint.pprint(delete_user)
 pass
-
-
-# pet_info = base_request.get('pet', 1)
-# pprint.pprint(pet_info)
-# pass
-
-# data = {'name': 'Barsic'}
-# pet_id = base_request.post('pet', 1, data)
-# pet_info = base_request.get('pet', pet_id)
-# assert data['name'] == pet_info['name']
-# pass
-
-# request_id = base_request.delete('pet', 1)
-# pet_info = base_request.get('pet', request_id, expected_error=True)
-# pprint.pprint(pet_info)
