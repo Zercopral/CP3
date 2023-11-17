@@ -79,17 +79,6 @@ class BaseRequest:
 BASE_URL_PETSTORE = 'https://petstore.swagger.io/v2'
 base_request = BaseRequest(BASE_URL_PETSTORE)
 
-# STORE
-# post
-
-# data2 = {'name': 'Barsic'}
-# pet_id = base_request.post('pet', 1, data2)
-# pet_info = base_request.get('pet', pet_id)
-# assert data2['name'] == pet_info['name']
-# pass
-
-
-
 
 #STORE
 #post
